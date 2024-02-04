@@ -40,7 +40,7 @@ docker run --init --detach -p 9192:9192 -p 52773:52773 -p 51773:51773 --name mes
 
 vcopy.sh copies IRIS data base files from the image to Message Bank volume (mbk-vol) before IRIS starts running in the container.
 
-Open the [production](http://localhost:52795/csp/messagebank/EnsPortal.ProductionConfig.zen?PRODUCTION=MessageBank.Production) and start it if it is not running already.
+Open the [production](http://localhost:52773/csp/messagebank/EnsPortal.ProductionConfig.zen?PRODUCTION=MessageBank.Production) and start it if it is not running already.
 
 I use IRIS Interoperability production in AWS Elastic Container Service. We have a file on host volume at /hostinfo/host.config with the Host IP Address. I use a CPF Merge file to define the ECP Server that I use to store data in mapped globals in a remote database. When the Message Bank Production starts and stops, I update a global with information about the Message Bank, so that containers running another IRIS Interoperability production can update their Message Bank Operation setting with the IP Address to find the Message Bank. 
 
