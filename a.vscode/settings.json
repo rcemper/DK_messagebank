@@ -1,0 +1,36 @@
+{
+    "files.associations": {
+    
+        "Dockerfile*": "dockerfile",
+        "iris.script": "objectscript"
+      },
+    "objectscript.conn" :{
+      "ns": "MESSAGEBANK",
+      "username": "_SYSTEM",
+      "password": "SYS",
+      "docker-compose": {
+        "service": "iris",
+        "internalPort": 52773
+      },
+      "active": true,
+      "links": {
+        "Production": "http://localhost:${port}/csp/messagebank/EnsPortal.ProductionConfig.zen?PRODUCTION=MessageBank.Production"        
+      }
+    },
+    "sqltools.connections": [
+      {
+        "namespace": "MESSAGEBANK",
+        "connectionMethod": "Server and Port",
+        "showSystem": false,
+        "previewLimit": 50,
+        "server": "localhost",
+        "port": 52795,
+        "askForPassword": false,
+        "driver": "InterSystems IRIS",
+        "name": "MESSAGEBANK",
+        "username": "_SYSTEM",
+        "password": "SYS"
+      }
+    ]
+
+}
