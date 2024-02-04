@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  iris:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: --ISCAgent false -b /opt/messagebank/vcopy.sh
+    init: true
+    restart: always
+    ports: 
+      - 41773:1972
+      - 9192:9192
+      - 42773:52773
+      - 51773
+    environment:
+      - ISC_DATA_DIRECTORY=/voldata/iconfig
+    volumes:
+      - ./:/voldata

@@ -1,0 +1,10 @@
+zn "%SYS"
+do ##class(Security.Users).UnExpireUserPasswords("*")
+do $SYSTEM.OBJ.Load("/opt/messagebank/Installer.cls", "ck")
+set sc = ##class(MessageBank.Installer).AWSConfigIRIS()
+
+zn "MESSAGEBANK"
+do $System.OBJ.LoadDir("/opt/messagebank/src","ck",,1)
+// zpm "install sslclient"
+
+halt
