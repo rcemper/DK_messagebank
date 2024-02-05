@@ -35,7 +35,7 @@ ClassMethod ConfigECP(ByRef pVars, pVerbose As %String = 1) As %Status
 		Write "Begin ConfigECP",!
 		zw pVars
 	}
-	Set ECPProperties("Address") = $Get(pVars("Address"),"11.22.33.44")
+	Set ECPProperties("Address") = $Get(pVars("Address"),"127.0.0.1")
 	Set ECPProperties("MirrorConnection") = $Get(pVars("MirrorConnection"),1)
 	Set ECPProperties("Port") = $Get(pVars("Port"),51773)
 	Set pECPServerName = $Get(pVars("ServerName"),"DMLSS_DBR")
