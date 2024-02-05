@@ -1,4 +1,6 @@
 ARG IMAGE=intersystemsdc/iris-community
+# to allow ECP
+# ARG IMAGE=containers.intersystems.com/intersystems/iris:2022.3.0.606.0
 FROM $IMAGE
 
 USER root
@@ -7,6 +9,9 @@ WORKDIR /opt/messagebank
 #  RUN mkdir /ghostdb/ && mkdir /voldata/ && mkdir /voldata/irisdb/ && chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/messagebank /ghostdb/ /voldata/ /voldata/irisdb/
 RUN mkdir /ghostdb/ && mkdir /voldata/ && mkdir /voldata/irisdb/ && chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_MGRUSER} /opt/messagebank /ghostdb/ /voldata/ /voldata/irisdb/
 USER ${ISC_PACKAGE_MGRUSER}
+
+# to enable ECP
+# COPY  ECP_iris.key /usr/irissys/mgr/iris.key
 
 COPY  Installer.cls .
 COPY  src src
