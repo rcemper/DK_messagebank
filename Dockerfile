@@ -1,5 +1,5 @@
 ARG IMAGE=intersystemsdc/iris-community
-# to allow ECP
+# to allow ECP, last vesion with webserver
 # ARG IMAGE=containers.intersystems.com/intersystems/iris:2022.3.0.606.0
 FROM $IMAGE
 
