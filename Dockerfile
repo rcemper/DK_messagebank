@@ -9,6 +9,7 @@ WORKDIR /opt/messagebank
 #  RUN mkdir /ghostdb/ && mkdir /voldata/ && mkdir /voldata/irisdb/ && chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/messagebank /ghostdb/ /voldata/ /voldata/irisdb/
 RUN mkdir /ghostdb/ && mkdir /voldata/ && mkdir /voldata/irisdb/ && chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_MGRUSER} /opt/messagebank /ghostdb/ /voldata/ /voldata/irisdb/
 USER ${ISC_PACKAGE_MGRUSER}
+COPY .iris_init /home/irisowner/.iris_init
 
 # to enable ECP
 # COPY  ECP_iris.key /usr/irissys/mgr/iris.key
